@@ -1,8 +1,9 @@
 import React, { useState, useEffect} from 'react'; 
 import EmployeeTable from '../EmployeeTable'; 
 import Nav from '../Navbar'; 
-import API from 'src/utils/API'; 
-import EmployeeInfoContext from 'src/utils/EmployeeInfoContext'; 
+import API from '../../utils/API'; 
+import EmployeeInfoContext from '../../utils/EmployeeContextInfo';
+
 
 export default function EmployeeInfo() { 
     const [employeeState, setEmployeeState] = useState({ 
@@ -52,13 +53,13 @@ export default function EmployeeInfo() {
                 }
             }
         }
-        const sortedUsers = employeeState.filteredUsers.sort(compareFunction); \
+        const sortedUsers = employeeState.filteredUsers.sort(compareFunction); 
 
         setEmployeeState({
             ...employeeState, 
             filteredUsers: sortedUsers
         }); 
-    }
+    };
 
 
     const handleSearchChange = event => { 
@@ -72,7 +73,7 @@ export default function EmployeeInfo() {
             ...employeeState, 
             filteredUsers: filteredList 
         });
-    }
+    };
 
     useEffect(() => {
         API.getUsers().then(results => {
@@ -82,7 +83,7 @@ export default function EmployeeInfo() {
                 filteredUsers: results.data.results
             }); 
         }); 
-    }, []); 
+    }); 
 
     return (
         <EmployeeInfoContext.Provider 

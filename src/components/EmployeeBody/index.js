@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
-import "./EmployeeBody.css"
-import EmployeeInfoContext from "../../utils/EmployeeInfoContext"
+import EmployeeInfoContext from '../../utils/EmployeeContextInfo';
 
-const EmployeeBody = () => {
+export default function EmployeeBody() {
     const context = useContext(EmployeeInfoContext);
 
     function formatDate(date){
@@ -15,9 +14,10 @@ const EmployeeBody = () => {
         return formattedDate;
     }
     return (
+
         <tbody>
-        {context.developerState.filteredUsers[0] !== undefined && context.developerState.filteredUsers[0].name !== undefined ? (
-          context.developerState.filteredUsers.map(({ login, name, picture, phone, email, dob }) => {
+        {context.employeeState.filteredUsers[0] !== undefined && context.employeeState.filteredUsers[0].name !== undefined ? (
+          context.employeeState.filteredUsers.map(({ login, name, picture, phone, email, dob }) => {
             return (
               <tr key={login.uuid}>
                 <td data-th="Image" className="align-middle">
@@ -51,4 +51,4 @@ const EmployeeBody = () => {
     );
   }
   
-  export default EmployeeBody;
+  

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'; 
-import EmployeeInfoContext from 'src/utils/EmployeeContextInfo';
+import EmployeeInfoContext from '../../utils/EmployeeContextInfo';
 
 export default function SearchBar() { 
     const context = useContext(EmployeeInfoContext); 

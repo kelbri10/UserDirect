@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'; 
-import EmployeeInfoContext from 'src/components/EmployeeInfo'; 
+import EmployeeInfoContext from '../../utils/EmployeeContextInfo';
 import EmployeeBody from '../EmployeeBody';
 
 export default function EmployeeTable() { 
