@@ -83,7 +83,7 @@ export default function EmployeeInfo() {
                 filteredUsers: results.data.results
             }); 
         }); 
-    }); 
+    }, []); 
 
     return (
         <EmployeeInfoContext.Provider 
